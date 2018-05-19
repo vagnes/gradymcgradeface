@@ -76,7 +76,10 @@ for thing in ordered_dict:
 
 	try:
 		x = thing[1]
-		x = float(x[0]) + float(x[1])
+
+		x = [float(i) for i in x]
+		
+		x = sum(x)
 
 		if grade_is_percent:
 			x = x / number_of_tests
