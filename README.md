@@ -1,6 +1,6 @@
 # Grady McGradeface
 
-Grady McGradeface checks a CSV file for student numbers and calculate how many failed and who. It supports calculation in points and percentages.
+Grady McGradeface checks a CSV file for student numbers and calculate how many passed and who failed. It supports calculation in points and percentages.
 
 It treats cells that have a string (for example "absent") as errors that you can set as a failing condition as well.
 
