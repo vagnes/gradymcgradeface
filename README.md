@@ -23,3 +23,20 @@ The script calculates all test results that student number has. Thus, to calcula
 (...)
 ```
 
+Here is its help and usage text:
+
+```text
+usage: gradymcgradeface.py [-h] [-f str] [-e] [-p] [-t int] [-l float]
+
+Grady McGradeface CLI
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f str, --file str    CSV file to read from.
+  -e, --errors          Treat value errors or index error as a condition for
+                        failing.
+  -p, --percent         Treat grade value as percentages instead of points.
+  -t int, --test int    Number of tests.
+  -l float, --limit float
+                        Number to set the grade limit to.
+```
