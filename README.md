@@ -40,3 +40,40 @@ optional arguments:
   -l float, --limit float
                         Number to set the grade limit to.
 ```
+
+## Example usage
+
+Options set:
+
+* filename: test.csv
+* Value errors and index errors are treated as failing condition.
+* Grade limit: 70
+* Number of tests: 3
+
+```text
+./gradymcgradeface.py -f test.csv -e -l 70 -t 3
+
+
+Limit set to 70.0
+
+Not admitted:           4 (points: 64.0)
+Value error for:        6
+Value error for:        17
+Value error for:        20
+Not admitted:           25 (points: 64.0)
+Value error for:        39
+Value error for:        51
+Value error for:        121
+Value error for:        128
+Value error for:        129
+Value error for:        130
+Value error for:        131
+Value error for:        132
+Not admitted:           133 (points: 23.5)
+
+
+14 out of 133 students are not admitted to the final.
+of which 11 had value errors or were out of range.
+
+The grade average was 79.16 points.
+```text
