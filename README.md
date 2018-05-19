@@ -4,7 +4,7 @@ Grady McGradeface checks a CSV file for student numbers and calculate how many p
 
 It treats cells that have a string (for example "absent") as errors that you can set as a failing condition as well.
 
-A "test.csv" file has been supplied to demontstrate its use.
+A "test.csv" file has been supplied to demonstrate its use.
 
 The script calculates all test results that student number has. Thus, to calculate more than one test, just append it to your CSV file, like so:
 
