@@ -76,4 +76,4 @@ Not admitted:           133 (points: 23.5)
 of which 11 had value errors or were out of range.
 
 The grade average was 79.16 points.
-```text
+```
