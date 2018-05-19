@@ -62,6 +62,7 @@ ordered_dict = d.items()
 not_admitted = 0
 value_errors = 0
 total_entities = 0
+cumulative_points = 0
 
 print("\n")
 
@@ -76,10 +77,10 @@ for thing in ordered_dict:
 
 	try:
 		x = thing[1]
-
 		x = [float(i) for i in x]
-		
 		x = sum(x)
+
+		cumulative_points += x
 
 		if grade_is_percent:
 			x = x / number_of_tests
@@ -109,5 +110,10 @@ if error_fail_true:
 else:
 	print(f"{not_admitted} out of {total_entities} students are not admitted to the final.")
 	print(f"{value_errors} had value errors or were out of range and thus not counted.")
+
+if grade_is_percent:
+	print(f"\nThe grade average was {round(cumulative_points / total_entities, 3)}%.")
+else:
+	print(f"\nThe grade average was {round(cumulative_points / total_entities, 2)} points.")
 
 print("\n")
