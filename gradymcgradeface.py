@@ -91,16 +91,16 @@ for thing in ordered_dict:
 			points_or_grade = f"points: {x}"
 
 		if x < grade_limit:
-			print(f"Not admitted:		{thing[0]} ({points_or_grade})")
+			print(f"Not admitted:\t\t{thing[0]} ({points_or_grade})")
 			not_admitted += 1
 	except IndexError:
-		print(f"Out of range for:	{thing[0]}")
+		print(f"Out of range for:\t{thing[0]}")
 		value_errors += 1
 	except ValueError:
-		print(f"Value error for:	{thing[0]}")
+		print(f"Value error for:\t{thing[0]}")
 		value_errors += 1
 	except TypeError as e:
-		print(f"TYPE ERROR for {thing[0]} ({thing[1]}; Something's wrong.\n {e}")
+		print(f"TYPE ERROR for {thing[0]} ({thing[1]}); Something's wrong.\n {e}")
 
 print("\n")
 
