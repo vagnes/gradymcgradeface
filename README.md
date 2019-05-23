@@ -23,6 +23,8 @@ The script calculates all test results that student number has. Thus, to calcula
 (...)
 ```
 
+If you encounter difficulties with your CSV file, it might be in the wrong format. Note that it should be formatted as UTF-8.
+
 Here is its help and usage text:
 
 ```text
@@ -44,12 +46,11 @@ optional arguments:
 Options set:
 
 * filename: test.csv
-* Value errors and index errors are treated as failing condition.
-* Grade limit: 70
+* Grade limit: 50
 * Number of tests: 3
 
 ```text
-./gradymcgradeface.py -f test.csv -l 50 -t 2
+./gradymcgradeface.py -f test.csv -l 50 -t 3
 
 Non-conforming fields found:
 
