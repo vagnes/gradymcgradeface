@@ -1,8 +1,8 @@
 # Grady McGradeface
 
-Grady McGradeface checks a CSV file for student numbers and calculate how many passed and who failed. It supports calculation in points and percentages.
+Grady McGradeface checks a CSV file for student numbers and calculate how many passed and who failed. It supports calculation in points and percentages in addition to calculating the culmination of points or the average of percentages.
 
-It treats cells that have a string (for example "absent") as errors that you can set as a failing condition as well.
+It treats cells that have a string (for example "absent") as a "non-conforming field", hence it is treated as zero-values.
 
 A "test.csv" file has been supplied to demonstrate its use.
 
@@ -26,15 +26,13 @@ The script calculates all test results that student number has. Thus, to calcula
 Here is its help and usage text:
 
 ```text
-usage: gradymcgradeface.py [-h] [-f str] [-e] [-p] [-t int] [-l float]
+usage: gradymcgradeface.py [-h] [-f str] [-p] [-t int] [-l float]
 
 Grady McGradeface CLI
 
 optional arguments:
   -h, --help            show this help message and exit
   -f str, --file str    CSV file to read from.
-  -e, --errors          Treat value errors or index error as a condition for
-                        failing.
   -p, --percent         Treat grade value as percentages instead of points.
   -t int, --test int    Number of tests.
   -l float, --limit float
@@ -51,29 +49,37 @@ Options set:
 * Number of tests: 3
 
 ```text
-./gradymcgradeface.py -f test.csv -e -l 70 -t 3
+./gradymcgradeface.py -f test.csv -l 50 -t 2
+
+Non-conforming fields found:
+
+ID: 121 -> absent
+ID: 128 -> absent
+ID: 129 -> absent
+ID: 130 -> absent
+ID: 131 -> absent
+ID: 132 -> absent
+ID: 17 -> absent
+ID: 20 -> absent
+ID: 39 -> absent
+ID: 51 -> absent
+ID: 6 -> absent
 
 
-Limit set to 70.0
+Students below the 50.0 points limit:
 
-Not admitted:           4 (points: 64.0)
-Value error for:        6
-Value error for:        17
-Value error for:        20
-Not admitted:           25 (points: 64.0)
-Value error for:        39
-Value error for:        51
-Value error for:        121
-Value error for:        128
-Value error for:        129
-Value error for:        130
-Value error for:        131
-Value error for:        132
-Not admitted:           133 (points: 23.5)
+ID: 128 (points: 49.5)
+ID: 129 (points: 42.0)
+ID: 132 (points: 45.0)
+ID: 133 (points: 23.5)
+ID: 17 (points: 36.5)
+ID: 20 (points: 41.5)
+ID: 39 (points: 46.0)
+ID: 6 (points: 38.5)
 
 
-14 out of 133 students are not admitted to the final.
-of which 11 had value errors or were out of range.
+8 out of 133 students are below the limit of 50.0 points.
+11 non-conforming fields found and were treated as zero-values.
 
-The grade average was 79.16 points.
+The grade average was 83.06 points.
 ```
